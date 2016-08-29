@@ -13,6 +13,13 @@ class Post extends Model
         'publish_at' => 'timestamp'
     ];
 
+    protected $fillable = [
+        'title',
+        'subtitle',
+        'slug',
+        'body'
+    ];
+
     /**
      * Return the sluggable configuration array for this model.
      *

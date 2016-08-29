@@ -16,6 +16,12 @@ class BlogServiceProvider extends ServiceProvider
         if (! $this->app->routesAreCached()) {
             require __DIR__.'/../routes.php';
         }
+
+        $this->publishes([
+            __DIR__.'/../config/artisancms-blog.php' => config_path('artisancms-blog.php'),
+        ]);
+
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
     }
 
     /**

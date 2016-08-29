@@ -1,5 +1,6 @@
 <?php
 
-Route::get('blog/test', function () {
-    return 'Hello blog world';
-});
+
+Route::get('blog/', 'ArtisanCMS\Blog\Http\Controller\BlogController@index');
+
+Route::get('blog/{slug?}', 'ArtisanCMS\Blog\Http\Controllers\BlogController@show');
