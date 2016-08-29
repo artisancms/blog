@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "lavary/laravel-menu": "^1.6",
+        "lavary/laravel-menu": "^1.6"
     },
     "autoload": {
         "psr-4": {
