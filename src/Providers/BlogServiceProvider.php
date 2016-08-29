@@ -17,6 +17,8 @@ class BlogServiceProvider extends ServiceProvider
             require __DIR__.'/../routes.php';
         }
 
+        require __DIR__ . '/../menu.php';
+
         $this->publishes([
             __DIR__.'/../config/artisancms-blog.php' => config_path('artisancms-blog.php'),
         ]);
