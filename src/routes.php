@@ -1,3 +1,5 @@
 <?php
 
-echo "Blog Routes";
+Route::get('blog/test', function () {
+    return 'Hello blog world';
+});

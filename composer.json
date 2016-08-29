@@ -11,7 +11,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "lavary/laravel-menu": "^1.6"
+        "lavary/laravel-menu": "^1.6",
+        "cviebrock/eloquent-sluggable": "^4.0"
     },
     "autoload": {
         "psr-4": {
