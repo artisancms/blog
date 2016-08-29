@@ -9,7 +9,7 @@
             "email": "andrewhuggins@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "lavary/laravel-menu": "^1.6",
         "cviebrock/eloquent-sluggable": "^4.0"
