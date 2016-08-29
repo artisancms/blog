@@ -1,0 +1,21 @@
+{
+    "name": "artisancms/blog",
+    "description": "The basic blog package for ArtisanCMS",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew huggins",
+            "email": "andrewhuggins@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "lavary/laravel-menu": "^1.6",
+    },
+    "autoload": {
+        "psr-4": {
+            "ArtisanCMS\\Blog\\": "src/"
+        }
+    }
+}
