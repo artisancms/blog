@@ -1,6 +1,6 @@
 <?php
 
-Menu::make('admin-main', function ($menu) {
+Menu::get('admin-main', function ($menu) {
     $menu->add('Blog', ['class' => 'treeview'])
         ->prepend('<i class="fa fa-list"></i>')
         ->append('<i class="fa fa-angle-left pull-right"></i>')
