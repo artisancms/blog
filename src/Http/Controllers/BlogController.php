@@ -11,7 +11,9 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(config('artisancms-blog.perPage'));
+        $posts = Post::orderBy('publish_at', 'DESC')
+                    ->where('publish_at', '<=', \Carbon\Carbon::now())
+                    ->paginate(config('artisancms-blog.perPage'));
         return view('theme::blog', ['posts' => $posts]);
     }
 
