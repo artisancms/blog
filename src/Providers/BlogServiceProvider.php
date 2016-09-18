@@ -23,6 +23,8 @@ class BlogServiceProvider extends ServiceProvider
             __DIR__.'/../config/artisancms-blog.php' => config_path('artisancms-blog.php'),
         ]);
 
+        $this->loadViewsFrom(__DIR__.'/../resources/views/admin', 'admin');
+
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
     }
 

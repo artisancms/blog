@@ -12,12 +12,12 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Post::paginate(config('artisancms-blog.perPage'));
-        return $posts;
+        return view('theme::blog', ['posts' => $posts]);
     }
 
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        return $post;
+        return view('theme::post', ['post' => $post]);
     }
 }
