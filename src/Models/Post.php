@@ -3,6 +3,7 @@
 namespace ArtisanCMS\Blog\Models;
 
 use App\User;
+use Markdown;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
@@ -44,5 +45,10 @@ class Post extends Model
     public function getPublishAtAttribute($value)
     {
         return (new \Carbon\Carbon($value))->format(config('artisancms-blog.publish_at.format'));
+    }
+
+    public function getBodyAttribute($value)
+    {
+        return Markdown::convertToHtml($value);
     }
 }

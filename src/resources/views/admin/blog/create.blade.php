@@ -44,9 +44,7 @@
                                 name="body"
                                 placeholder="Your content here"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
-                            >
-                                {{ old('body') }}    
-                            </textarea>
+                            >{{ old('body') }}</textarea>
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
