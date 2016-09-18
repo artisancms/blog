@@ -111,21 +111,23 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="/cms/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    {{-- <link rel="stylesheet" href="/cms/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> --}}
     <link rel="stylesheet" href="/cms/plugins/daterangepicker/daterangepicker-bs3.css">
     <link rel="stylesheet" href="/cms/plugins/datepicker/datepicker3.css">
     <link rel="stylesheet" href="/cms/plugins/timepicker/bootstrap-timepicker.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 @stop
 
 @section('scripts')
     <!-- Bootstrap WYSIHTML5 -->
-    <script src="/cms/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    
+    {{-- <script src="/cms/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
     <script src="/cms/plugins/datepicker/bootstrap-datepicker.js"></script>
     <script src="/cms/plugins/timepicker/bootstrap-timepicker.js"></script>
     <script src="/cms/plugins/daterangepicker/daterangepicker.js"></script>
     <script>
+        var simplemde = new SimpleMDE();
       $(function () {
          //Date picker
         $('#datepicker').datepicker({
@@ -134,7 +136,7 @@
         //Timepicker
         $('.timepicker').timepicker();
 
-        $(".textarea").wysihtml5();
+        // $(".textarea").wysihtml5();
         //Date range picker with time picker
         // $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
       });
