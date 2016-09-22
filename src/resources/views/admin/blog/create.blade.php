@@ -8,58 +8,51 @@
 
 @section('content')
     
-    @if ($post->id)
-        <form action="/admin/blog/{{ $post->id }}" method="POST">
+    @if (isset($post))
+        {!! Form::model($post, ['url' => '/admin/blog/' . $post->id]) !!}
     @else
         <form action="/admin/blog/create" method="POST">
     @endif
-
-        {{ csrf_field() }}
         <div class="row">
             <div class="col-md-8">
                 <div class="box box-danger">
                     <div class="box-body">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input 
-                                type="text"
-                                class="form-control"
-                                id="title"
-                                placeholder="Title"
-                                name="title"
-                                value="{{ $post->title ?? old('title') }}"
-                            >
+                            {!! Form::text('title', old('title'), [
+                                    'class' => 'form-control',
+                                    'id' => 'title',
+                                    'placeholder' => 'Title'
+                                ]) !!}
+                            
                         </div>
                         <div class="form-group">
                             <label for="subtitle">Sub Title</label>
-                            <input 
-                                type="text"
-                                class="form-control"
-                                id="subtitle"
-                                placeholder="Sub Title"
-                                name="subtitle"
-                                value="{{ $post->subtitle ?? old('subtitle') }}"
-                            >
+                            {!! Form::text('subtitle', old('subtitle'), [
+                                    'class' => 'form-control',
+                                    'id' => 'subtitle',
+                                    'placeholder' => 'Sub Title'
+                                ]) !!}
                         </div>
                         <div class="form-group">
                             <label>Teaser</label>
-                            <textarea
-                                class="textarea"
-                                name="teaser"
-                                placeholder="Brief tease of the post"
-                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
-                            >{{ $post->teaser ?? old('teaser') }}</textarea>
+                            {!! Form::textarea('teaser', old('teaser'), [
+                                    'class' => 'form-control',
+                                    'id' => 'teaser',
+                                    'placeholder' => 'Brief tease of the post',
+                                    'style' => 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;'
+                                ]) !!}
+                            
                         </div>
                         <div class="form-group">
                             <label for="body">Body</label>
-                              
-                            <textarea 
-                                class="textarea"
-                                id="post-body"
-                                name="body"
-                                placeholder="Your content here"
-                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
-                            >{{ $post->body ?? old('body') }}</textarea>
+                            {!! Form::textarea('body', old('body'), [
+                                    'class' => 'form-control',
+                                    'id' => 'post-body',
+                                    'placeholder' => 'Your markdown content here',
+                                    'style' => 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;'
+                                ]) !!}
+                            
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
@@ -78,13 +71,11 @@
                               <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                               </div>
-                              <input
-                                type="text"
-                                class="form-control pull-right"
-                                id="datepicker"
-                                name="publish_date"
-                                value="{{ $post->publish_at->format('m/d/Y') ?? old('publish_date') }}"
-                              >
+                              {!! Form::text('publish_date', old('publish_date'), [
+                                    'class' => 'form-control pull-right',
+                                    'id' => 'datepicker',
+                              ]) !!}
+                              
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
                         <div class="form-group">
@@ -93,12 +84,10 @@
                               <div class="input-group-addon">
                                 <i class="fa fa-clock-o"></i>
                               </div>
-                              <input
-                                type="text"
-                                class="form-control pull-right timepicker"
-                                name="publish_time"
-                                value="{{ $post->publish_at->format('H:i A') ?? old('publish_time') }}"
-                              >
+                              {!! Form::text('publish_time', old('publish_time'), [
+                                    'class' => 'form-control pull-right timepicker',
+                              ]) !!}
+                              
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
                         <div class="form-group">

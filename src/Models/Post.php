@@ -47,4 +47,14 @@ class Post extends Model
     {
         return $this->publish_at->format(config('artisancms-blog.publish_at.format'));
     }
+
+    public function getPublishDateAttribute()
+    {
+        return $this->publish_at->format('m/d/Y');
+    }
+
+    public function getPublishTimeAttribute()
+    {
+        return $this->publish_at->format('h:i A');
+    }
 }
