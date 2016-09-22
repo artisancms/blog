@@ -17,7 +17,11 @@
                         </tr>
                         @foreach ($posts as $post)
                             <tr>
-                                <td>{{ $post->title }}</td>
+                                <td>
+                                    <a href="{{ url('admin/blog/' . $post->id) }}">
+                                        {{ $post->title }}
+                                    </a>
+                                </td>
                                 <td>{{ $post->published_at }}</td>
                                 <td></td>
                             </tr>
@@ -27,7 +31,9 @@
                 </div>            
                 <!-- /.box-body -->
                 <div class="box-footer clearfix">
-                    {{ $posts->links('admin::partials.pagination') }}
+                    
+                        {{ $posts->links('admin::partials.pagination') }}
+                    </a>
                 </div>
             </div>
         </div>

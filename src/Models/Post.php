@@ -41,14 +41,4 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'author_id');
     }
-
-    public function getPublishAtAttribute($value)
-    {
-        return (new \Carbon\Carbon($value))->format(config('artisancms-blog.publish_at.format'));
-    }
-
-    public function getBodyAttribute($value)
-    {
-        return Markdown::convertToHtml($value);
-    }
 }

@@ -11,7 +11,8 @@ class BlogAdminController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(config('artisancms-blog.perPage'));
+        $posts = Post::orderBy('publish_at', 'DESC')
+                ->paginate(config('artisancms-blog.perPage'));
         return view('admin::blog.index', ['posts' => $posts]);
     }
 
@@ -28,6 +29,13 @@ class BlogAdminController extends Controller
 
     public function edit($id)
     {
-        return Post::find($id);
+        $post = Post::find($id);
+        return view('admin::blog.create', ['post' => $post]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $post = Post::find($id)->update($request->all());
+        return redirect('admin/blog');
     }
 }

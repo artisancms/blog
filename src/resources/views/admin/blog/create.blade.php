@@ -8,7 +8,12 @@
 
 @section('content')
 
-    <form action="/admin/blog/create" method="POST">
+    @if ($post->id)
+        <form action="/admin/blog/{{ $post->id }}" method="POST">
+    @else
+        <form action="/admin/blog/create" method="POST">
+    @endif
+
         {{ csrf_field() }}
         <div class="row">
             <div class="col-md-8">
@@ -22,7 +27,7 @@
                                 id="title"
                                 placeholder="Title"
                                 name="title"
-                                value="{{ old('title') }}"
+                                value="{{ $post->title ?? old('title') }}"
                             >
                         </div>
                         <div class="form-group">
@@ -33,7 +38,7 @@
                                 id="subtitle"
                                 placeholder="Sub Title"
                                 name="subtitle"
-                                value="{{ old('subtitle') }}"
+                                value="{{ $post->subtitle ?? old('subtitle') }}"
                             >
                         </div>
                         <div class="form-group">
@@ -44,7 +49,7 @@
                                 name="body"
                                 placeholder="Your content here"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
-                            >{{ old('body') }}</textarea>
+                            >{{ $post->body ?? old('body') }}</textarea>
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
@@ -68,7 +73,7 @@
                                 class="form-control pull-right"
                                 id="datepicker"
                                 name="publish_date"
-                                value="{{ old('publish_date') }}"
+                                value="{{ $post->publish_at->format('m/d/Y') ?? old('publish_date') }}"
                               >
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
@@ -82,7 +87,7 @@
                                 type="text"
                                 class="form-control pull-right timepicker"
                                 name="publish_time"
-                                value="{{ old('publish_time') }}"
+                                value="{{ $post->publish_at->format('H:i A') ?? old('publish_time') }}"
                               >
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
