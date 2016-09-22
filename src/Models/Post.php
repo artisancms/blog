@@ -41,4 +41,9 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'author_id');
     }
+
+    public function publishDate()
+    {
+        return $this->publish_at->format(config('artisancms-blog.publish_at.format'));
+    }
 }
