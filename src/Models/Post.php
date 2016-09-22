@@ -20,7 +20,8 @@ class Post extends Model
         'subtitle',
         'slug',
         'body',
-        'author_id'
+        'author_id',
+        'teaser'
     ];
 
     /**

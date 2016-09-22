@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-
+    
     @if ($post->id)
         <form action="/admin/blog/{{ $post->id }}" method="POST">
     @else
@@ -42,10 +42,20 @@
                             >
                         </div>
                         <div class="form-group">
+                            <label>Teaser</label>
+                            <textarea
+                                class="textarea"
+                                name="teaser"
+                                placeholder="Brief tease of the post"
+                                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
+                            >{{ $post->teaser ?? old('teaser') }}</textarea>
+                        </div>
+                        <div class="form-group">
                             <label for="body">Body</label>
                               
                             <textarea 
                                 class="textarea"
+                                id="post-body"
                                 name="body"
                                 placeholder="Your content here"
                                 style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
@@ -130,7 +140,7 @@
     <script src="/cms/plugins/timepicker/bootstrap-timepicker.js"></script>
     <script src="/cms/plugins/daterangepicker/daterangepicker.js"></script>
     <script>
-        var simplemde = new SimpleMDE();
+        var simplemde = new SimpleMDE({ element: document.getElementById("post-body") });
       $(function () {
          //Date picker
         $('#datepicker').datepicker({
