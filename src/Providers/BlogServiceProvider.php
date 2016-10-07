@@ -24,7 +24,7 @@ class BlogServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__.'/../resources/views/widgets' => resources_path('views/widgets'),
+            __DIR__.'/../resources/views/widgets' => resource_path('views/widgets'),
         ]);
 
         $this->publishes([
