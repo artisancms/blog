@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Widgets;
+namespace App\Widgets\Blog;
 
 use ArtisanCMS\Blog\Models\Post;
 use Arrilot\Widgets\AbstractWidget;
