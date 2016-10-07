@@ -13,7 +13,7 @@
                         <tbody><tr>
                             <th>Title</th>
                             <th>Published Date</th>
-                            <th>Progress</th>
+                            <th>Author</th>
                         </tr>
                         @foreach ($posts as $post)
                             <tr>
@@ -22,8 +22,8 @@
                                         {{ $post->title }}
                                     </a>
                                 </td>
-                                <td>{{ $post->published_at }}</td>
-                                <td></td>
+                                <td>{{ $post->publish_at }}</td>
+                                <td>{{ $post->author->name }}</td>
                             </tr>
                         @endforeach
                     </tbody>

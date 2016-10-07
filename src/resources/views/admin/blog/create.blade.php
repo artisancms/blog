@@ -101,7 +101,11 @@
                                 class="form-control pull-right"
                                 name="author_id"
                               >
-                                <option value="1">1</option>
+                                @foreach ($post->authors() as $author)
+                                    <option value="{{ $author->id }}">
+                                        {{ $author->name }}
+                                    </option>
+                                @endforeach
                               </select>
                             </div><!-- /.input group -->
                         </div><!-- /.form group -->
