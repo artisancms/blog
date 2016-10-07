@@ -11,7 +11,8 @@
     @if (isset($post))
         {!! Form::model($post, ['url' => '/admin/blog/' . $post->id]) !!}
     @else
-        <form action="/admin/blog/create" method="POST">
+        
+        {!! Form::open(['url' => '/admin/blog/create']) !!}
     @endif
         <div class="row">
             <div class="col-md-8">
