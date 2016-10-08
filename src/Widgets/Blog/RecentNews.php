@@ -3,7 +3,7 @@
 namespace App\Widgets\Blog;
 
 use ArtisanCMS\Blog\Models\Post;
-use Arrilot\Widgets\AbstractWidget;
+use ArtisanCMS\Widgets\AbstractWidget;
 
 class RecentNews extends AbstractWidget
 {

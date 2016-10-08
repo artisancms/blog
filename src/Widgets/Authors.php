@@ -3,7 +3,7 @@
 namespace App\Widgets;
 
 use App\User;
-use Arrilot\Widgets\AbstractWidget;
+use ArtisanCMS\Widgets\AbstractWidget;
 
 class Authors extends AbstractWidget
 {
