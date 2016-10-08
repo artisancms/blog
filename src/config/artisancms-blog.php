@@ -5,5 +5,10 @@ return [
     'perPage' => 20,
     'publish_at' => [
         'format' => 'F d, Y',
+    ],
+    'widgets' => [
+        'recentNews' => [
+            'count' => 5
+        ]
     ]
 ];
