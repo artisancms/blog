@@ -12,9 +12,16 @@ class RecentNews extends AbstractWidget
      *
      * @var array
      */
-    protected $config = [
-        'count' => config('artisancms-blog.widgets.recentNews.count')
-    ];
+    protected $config = [];
+
+    public function __construct(array $config = [])
+    {
+        $this->addConfigDefaults([
+            'count' => config('artisancms-blog.widgets.recentNews.count')
+        ]);
+
+        parent::__construct($config);
+    }
 
     /**
      * Treat this method as a controller action.

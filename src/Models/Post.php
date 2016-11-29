@@ -4,12 +4,13 @@ namespace ArtisanCMS\Blog\Models;
 
 use App\User;
 use Markdown;
+use Plank\Mediable\Mediable;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Post extends Model
 {
-    use Sluggable;
+    use Sluggable, Mediable;
 
     protected $casts = [
         'publish_at' => 'datetime'
